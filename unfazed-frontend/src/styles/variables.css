@@ -1,0 +1,81 @@
+:root {
+  /* Brand identity */
+  --brand: #e98250;
+  --brand-hover: #d96d3d;
+  --brand-dark: #bd5d35;
+  --brand-soft: #fff0e6;
+  --brand-pale: #fff8f2;
+
+  /* Application backgrounds */
+  --background: #fffaf6;
+  --surface: #ffffff;
+  --surface-soft: #fff5ed;
+  --surface-sage: #edf2eb;
+
+  /* Typography */
+  --text-primary: #303b35;
+  --text-secondary: #737c75;
+  --text-muted: #a1a79f;
+  --text-inverse: #ffffff;
+
+  /* Status colors */
+  --success: #548568;
+  --success-soft: #eaf4ed;
+  --warning: #c58b39;
+  --warning-soft: #fff4df;
+  --danger: #c9635b;
+  --danger-soft: #fcecea;
+  --info: #668ca1;
+  --info-soft: #edf4f7;
+
+  /* Borders */
+  --border: #eee5dc;
+  --border-strong: #e3d4c7;
+
+  /* Typography */
+  --font-body: "DM Sans", sans-serif;
+  --font-heading: "Manrope", sans-serif;
+
+  /* Font sizes */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 22px;
+  --text-2xl: 30px;
+  --text-3xl: 40px;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* Rounded corners */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-full: 999px;
+
+  /* Shadows */
+  --shadow-sm: 0 3px 12px rgba(65, 48, 34, 0.04);
+  --shadow-md: 0 8px 28px rgba(65, 48, 34, 0.07);
+  --shadow-lg: 0 16px 45px rgba(65, 48, 34, 0.10);
+
+  /* Layout */
+  --sidebar-width: 250px;
+  --header-height: 76px;
+  --content-width: 1440px;
+
+  /* Animation */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 400ms ease;
+}

@@ -1,0 +1,25 @@
+@'
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Operating system
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+'@ | Set-Content -Path ".gitignore"
+unfazed-backend/backup-before-src-migration/

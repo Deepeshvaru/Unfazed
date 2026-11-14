@@ -1,0 +1,399 @@
+
+/* =========================================
+   UNFAZED - THERAPIST APP LAYOUT
+========================================= */
+
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  background: #f8f7fb;
+  color: #302344;
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+/* Main dashboard area */
+
+.app-layout-main {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+
+.app-layout-header {
+  min-height: 88px;
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: #ffffff;
+  border-bottom: 1px solid #eeeaf3;
+  position: relative;
+  z-index: 20;
+}
+
+.app-layout-header-user h2 {
+  margin: 0;
+  color: #302344;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.app-layout-header-user p {
+  margin: 6px 0 0;
+  color: #91889d;
+  font-size: 12px;
+}
+
+/* Header actions */
+
+.therapist-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* =========================================
+   NOTIFICATION BELL
+========================================= */
+
+.therapist-notification-wrapper {
+  position: relative;
+}
+
+.therapist-notification-button {
+  width: 44px;
+  height: 44px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #eee8f5;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #7650bd;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.therapist-notification-button:hover {
+  background: #f5f0fc;
+  border-color: #d8c8ed;
+  color: #6540a8;
+}
+
+.therapist-notification-button:focus-visible {
+  outline: 3px solid rgba(118, 80, 189, 0.2);
+  outline-offset: 3px;
+}
+
+.therapist-notification-button svg {
+  display: block;
+  width: 21px;
+  height: 21px;
+}
+
+/* Unread badge */
+
+.therapist-notification-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 19px;
+  height: 19px;
+  padding: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+  background: #e45b70;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* =========================================
+   NOTIFICATION DROPDOWN
+========================================= */
+
+.therapist-notification-dropdown {
+  position: absolute;
+  top: calc(100% + 13px);
+  right: 0;
+  z-index: 1000;
+  width: 360px;
+  max-width: calc(100vw - 32px);
+  overflow: hidden;
+  border: 1px solid #eee8f5;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 15px 45px rgba(42, 27, 68, 0.14);
+  animation: notificationDropdownIn 0.18s ease;
+}
+
+@keyframes notificationDropdownIn {
+  from {
+    opacity: 0;
+    transform: translateY(-7px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dropdown heading */
+
+.therapist-notification-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 17px 18px;
+  border-bottom: 1px solid #f0ebf5;
+}
+
+.therapist-notification-heading h3 {
+  margin: 0 0 4px;
+  color: #302344;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.therapist-notification-heading span {
+  color: #8c8299;
+  font-size: 12px;
+}
+
+.therapist-notification-heading button {
+  padding: 6px 8px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #7650bd;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.therapist-notification-heading button:hover {
+  background: #f6f1fc;
+}
+
+/* Notification list */
+
+.therapist-notification-list {
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.therapist-notification-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.therapist-notification-list::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #d9cfe8;
+}
+
+/* Empty/loading message */
+
+.therapist-notification-empty {
+  padding: 30px 18px;
+  margin: 0;
+  color: #8c8299;
+  font-size: 13px;
+  text-align: center;
+}
+
+/* Individual notification */
+
+.therapist-notification-item {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 15px 17px;
+  border: none;
+  border-bottom: 1px solid #f3eff7;
+  background: #ffffff;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.therapist-notification-item:last-child {
+  border-bottom: none;
+}
+
+.therapist-notification-item:hover {
+  background: #faf8fd;
+}
+
+.therapist-notification-item.unread {
+  background: #f8f4fd;
+}
+
+.therapist-notification-item.unread:hover {
+  background: #f1eafa;
+}
+
+/* Unread indicator */
+
+.therapist-notification-dot {
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  margin-top: 6px;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.therapist-notification-item.unread
+.therapist-notification-dot {
+  background: #7650bd;
+}
+
+/* Notification text */
+
+.therapist-notification-text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.therapist-notification-text strong {
+  color: #302344;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.therapist-notification-text > span {
+  color: #70677b;
+  font-size: 12px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.therapist-notification-text small {
+  color: #a098aa;
+  font-size: 10px;
+}
+
+/* =========================================
+   LOGOUT BUTTON
+========================================= */
+
+.app-layout-logout {
+  min-height: 40px;
+  padding: 0 16px;
+  border: 1px solid #eadff0;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #7650bd;
+  font-size: 12px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.app-layout-logout:hover {
+  background: #7650bd;
+  border-color: #7650bd;
+  color: #ffffff;
+}
+
+/* =========================================
+   DASHBOARD CONTENT
+========================================= */
+
+.app-layout-content {
+  width: 100%;
+  flex: 1;
+  padding: 28px 32px;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 900px) {
+  .app-layout-header {
+    padding: 16px 22px;
+  }
+
+  .app-layout-content {
+    padding: 24px 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-layout-header {
+    min-height: 75px;
+    padding: 13px 15px;
+    gap: 10px;
+  }
+
+  .app-layout-header-user h2 {
+    font-size: 16px;
+  }
+
+  .app-layout-header-user p {
+    font-size: 10px;
+  }
+
+  .therapist-header-actions {
+    gap: 10px;
+  }
+
+  .therapist-notification-button {
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+  }
+
+  .therapist-notification-button svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .therapist-notification-dropdown {
+    position: fixed;
+    top: 75px;
+    right: 12px;
+    left: 12px;
+    width: auto;
+    max-width: none;
+  }
+
+  .app-layout-logout {
+    min-height: 36px;
+    padding: 0 11px;
+    font-size: 11px;
+  }
+
+  .app-layout-content {
+    padding: 18px 14px;
+  }
+}
+
+@media (max-width: 380px) {
+  .app-layout-header-user p {
+    display: none;
+  }
+
+  .app-layout-header-user h2 {
+    font-size: 14px;
+  }
+
+  .therapist-header-actions {
+    gap: 7px;
+  }
+}

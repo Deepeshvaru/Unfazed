@@ -1,0 +1,926 @@
+
+/* =========================================
+   UNFAZED - PUBLIC THERAPIST PROFILE
+   Lavender / Purple Theme
+========================================= */
+
+.public-profile-page {
+  --profile-primary: #7650bd;
+  --profile-primary-dark: #60409d;
+  --profile-primary-light: #f2ebff;
+  --profile-background: #faf8fd;
+  --profile-text: #30204f;
+  --profile-muted: #81768f;
+  --profile-border: #eee7f7;
+  --profile-white: #ffffff;
+
+  min-height: 100vh;
+  background: var(--profile-background);
+  color: var(--profile-text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  padding-bottom: 0;
+}
+
+.public-profile-page *,
+.public-profile-page *::before,
+.public-profile-page *::after {
+  box-sizing: border-box;
+}
+
+.profile-content {
+  width: min(1100px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.profile-status {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--profile-primary);
+  font-size: 16px;
+}
+
+.profile-status-error {
+  color: #c24154;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.profile-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 75px 20px 85px;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    #f5f0ff 0%,
+    #eee6ff 48%,
+    #e9eaff 100%
+  );
+  border-bottom: 1px solid #e9e0f7;
+}
+
+.profile-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.profile-hero-decoration {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.profile-hero-decoration-one {
+  width: 280px;
+  height: 280px;
+  top: -140px;
+  left: -80px;
+}
+
+.profile-hero-decoration-two {
+  width: 360px;
+  height: 360px;
+  right: -150px;
+  bottom: -220px;
+}
+
+.profile-hero-badge {
+  display: inline-block;
+  padding: 9px 17px;
+  border: 1px solid #e5d8ff;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--profile-primary);
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 1.4px;
+}
+
+.profile-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 86px;
+  height: 86px;
+  margin: 25px auto 17px;
+  border: 5px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  background: linear-gradient(135deg, #9671d5, #7049b2);
+  color: white;
+  font-size: 34px;
+  font-weight: 700;
+  box-shadow: 0 8px 25px rgba(92, 58, 151, 0.2);
+}
+
+.profile-hero-name {
+  margin: 0 0 14px;
+  color: #30204f;
+  font-size: clamp(30px, 5vw, 44px);
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+.profile-hero-description {
+  max-width: 680px;
+  margin: 0 auto;
+  color: #655778;
+  font-size: 15px;
+  line-height: 1.9;
+  white-space: pre-line;
+}
+
+.profile-hero-languages {
+  margin-top: 22px;
+  color: #69558a;
+  font-size: 14px;
+}
+
+.profile-hero-languages span {
+  margin-right: 6px;
+  color: #49336f;
+  font-weight: 700;
+}
+
+/* =========================================
+   COMMON SECTION STYLES
+========================================= */
+
+.profile-section,
+.about-card,
+.booking-panel {
+  margin-top: 30px;
+  padding: 34px;
+  border: 1px solid var(--profile-border);
+  border-radius: 20px;
+  background: var(--profile-white);
+  box-shadow: 0 7px 28px rgba(72, 45, 110, 0.045);
+}
+
+.section-heading-group {
+  margin-bottom: 24px;
+}
+
+.section-eyebrow {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--profile-primary);
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 1.5px;
+}
+
+.section-title {
+  margin: 0 0 10px;
+  color: var(--profile-text);
+  font-size: 26px;
+  font-weight: 750;
+  line-height: 1.3;
+}
+
+.section-description {
+  margin: 0;
+  color: var(--profile-muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.profile-muted {
+  color: var(--profile-muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   ABOUT SECTION
+========================================= */
+
+.about-card {
+  margin-top: 38px;
+}
+
+.about-card .section-heading-group {
+  margin-bottom: 16px;
+}
+
+.about-description {
+  margin: 0;
+  color: #655b75;
+  font-size: 15px;
+  line-height: 1.9;
+  white-space: pre-line;
+}
+
+.about-divider {
+  height: 1px;
+  margin: 27px 0;
+  background: var(--profile-border);
+}
+
+.about-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.about-subheading {
+  margin: 0 0 14px;
+  color: #49336f;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.profile-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.profile-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 15px;
+  border: 1px solid #e7dcff;
+  border-radius: 30px;
+  background: #f2ebff;
+  color: #7045b5;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.profile-language-tag {
+  border-color: #e9e3f5;
+  background: #f7f4fc;
+  color: #62518b;
+}
+
+/* =========================================
+   SERVICES
+========================================= */
+
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.service-card {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid var(--profile-border);
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 5px 18px rgba(72, 45, 110, 0.045);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(72, 45, 110, 0.09);
+}
+
+.service-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 17px;
+  border-radius: 12px;
+  background: var(--profile-primary-light);
+  color: var(--profile-primary);
+  font-size: 20px;
+}
+
+.service-name {
+  margin: 0 0 10px;
+  color: var(--profile-text);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.service-description {
+  margin: 0;
+  color: var(--profile-muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.service-sessions {
+  margin: 16px 0 0;
+  color: var(--profile-primary);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.service-price-row {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+  padding-top: 15px;
+  border-top: 1px solid var(--profile-border);
+}
+
+.service-price {
+  color: var(--profile-primary);
+  font-size: 22px;
+  font-weight: 750;
+}
+
+.service-price-label {
+  color: #958ba5;
+  font-size: 12px;
+}
+
+/* =========================================
+   PACKAGES
+========================================= */
+
+.package-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.package-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 25px;
+  border: 1px solid var(--profile-border);
+  border-radius: 17px;
+  background: #ffffff;
+  box-shadow: 0 5px 20px rgba(72, 45, 110, 0.05);
+  transition: border-color 0.2s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.package-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(72, 45, 110, 0.09);
+}
+
+.package-card-selected {
+  border: 2px solid #8962cc;
+  background: #faf7ff;
+}
+
+.package-selected-label {
+  align-self: flex-start;
+  margin-bottom: 13px;
+  padding: 6px 11px;
+  border-radius: 20px;
+  background: #eee5ff;
+  color: #7045b5;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.package-name {
+  margin: 0 0 9px;
+  color: var(--profile-text);
+  font-size: 18px;
+  font-weight: 750;
+}
+
+.package-description {
+  min-height: 42px;
+  margin: 0 0 15px;
+  color: var(--profile-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.package-price {
+  margin: 5px 0 15px;
+  color: var(--profile-primary);
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.package-details {
+  display: grid;
+  gap: 9px;
+  margin-bottom: 20px;
+  color: #746984;
+  font-size: 13px;
+}
+
+.package-details span::before {
+  content: "✓";
+  margin-right: 8px;
+  color: var(--profile-primary);
+  font-weight: 800;
+}
+
+.package-card .profile-button {
+  width: 100%;
+  margin-top: auto;
+}
+
+.selected-package-message {
+  margin-top: 20px;
+  padding: 15px 17px;
+  border: 1px solid #e7dcff;
+  border-radius: 11px;
+  background: #f3edff;
+  color: #7045b5;
+  font-size: 14px;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.profile-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 45px;
+  padding: 12px 22px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: var(--profile-primary);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.profile-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: var(--profile-primary-dark);
+  box-shadow: 0 5px 14px rgba(118, 80, 189, 0.2);
+}
+
+.profile-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.profile-button-outline {
+  border-color: #d8c7f5;
+  background: #ffffff;
+  color: var(--profile-primary);
+}
+
+.profile-button-outline:hover:not(:disabled) {
+  background: #f5f0ff;
+  color: var(--profile-primary-dark);
+}
+
+.profile-button-secondary {
+  margin-top: 25px;
+}
+/* =========================================
+   BOOKING PANEL - IMPROVED SIZE
+========================================= */
+
+.booking-panel {
+  width: 100%;
+  max-width: 1100px;
+  margin: 40px auto 60px;
+  padding: 42px;
+  border: 1px solid #e3d8f2;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 10px 35px rgba(72, 45, 110, 0.07);
+}
+
+.booking-panel > .section-heading-group {
+  margin-bottom: 32px;
+}
+
+.booking-step {
+  margin-top: 30px;
+}
+
+.booking-subtitle {
+  margin: 0 0 19px;
+  color: #49336f;
+  font-size: 18px;
+  font-weight: 750;
+}
+
+.booking-form {
+  display: grid;
+  gap: 28px;
+  margin-top: 30px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.form-field-full {
+  grid-column: 1 / -1;
+}
+
+.profile-field {
+  display: block;
+  min-width: 0;
+  color: #49336f;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.profile-input {
+  display: block;
+  width: 100%;
+  min-height: 49px;
+  margin-top: 9px;
+  padding: 13px 15px;
+  border: 1px solid #e2d8ef;
+  border-radius: 11px;
+  outline: none;
+  background: #ffffff;
+  color: #30204f;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-input::placeholder {
+  color: #aaa1b6;
+}
+
+.profile-input:focus {
+  border-color: #9a78d1;
+  box-shadow: 0 0 0 3px rgba(118, 80, 189, 0.1);
+}
+
+.profile-textarea {
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.logged-in-client {
+  display: grid;
+  gap: 7px;
+  padding: 19px;
+  border: 1px solid #e9e0f7;
+  border-radius: 12px;
+  background: #faf8fd;
+  color: #625477;
+  font-size: 14px;
+}
+
+.logged-in-label {
+  color: #958ba5;
+  font-size: 12px;
+}
+
+.logged-in-client strong {
+  color: #49336f;
+  font-size: 15px;
+}
+/* =========================================
+   INTAKE FORM
+========================================= */
+
+.intake-panel {
+  display: grid;
+  gap: 20px;
+  padding: 25px;
+  border: 1px solid #eee6f8;
+  border-radius: 15px;
+  background: #faf8fd;
+}
+
+.intake-panel .section-description {
+  margin-top: 8px;
+}
+
+.consent-field {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  color: #6e627e;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.7;
+  cursor: pointer;
+}
+
+.consent-field input {
+  width: 17px;
+  height: 17px;
+  margin-top: 2px;
+  accent-color: var(--profile-primary);
+  flex-shrink: 0;
+}
+
+.booking-submit-button {
+  width: 100%;
+  min-height: 50px;
+  margin-top: 5px;
+  font-size: 15px;
+}
+
+/* =========================================
+   ALERTS AND SELECTED SLOT
+========================================= */
+
+.profile-alert {
+  margin: 18px 0;
+  padding: 15px 17px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.profile-alert-success {
+  border-color: #ccebd9;
+  background: #edfaf3;
+  color: #18794e;
+}
+
+.profile-alert-error {
+  border-color: #ffd9de;
+  background: #fff1f2;
+  color: #c24154;
+}
+
+.selected-slot-message {
+  margin-top: 17px;
+  padding: 14px 16px;
+  border: 1px solid #e7dcff;
+  border-radius: 10px;
+  background: #f3edff;
+  color: #7045b5;
+  font-size: 14px;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.profile-footer {
+  padding: 24px 20px;
+  border-top: 1px solid #eee7f7;
+  background: #ffffff;
+  color: #958ba5;
+  font-size: 12px;
+  text-align: center;
+}
+
+.profile-footer strong {
+  color: var(--profile-primary);
+  font-weight: 750;
+}
+
+/* =========================================
+   CALENDAR AND SLOT PICKER
+   General wrapper styling
+========================================= */
+
+.booking-panel .calendar,
+.booking-panel .slot-picker {
+  max-width: 100%;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 768px) {
+  .profile-hero {
+    padding: 60px 20px 65px;
+  }
+
+  .profile-content {
+    width: min(100% - 28px, 1100px);
+  }
+
+  .profile-section,
+  .about-card,
+  .booking-panel {
+    padding: 25px 22px;
+    border-radius: 16px;
+  }
+
+  .about-details-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .booking-panel {
+    margin-top: 30px;
+  }
+
+  .section-title {
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 520px) {
+  .profile-hero {
+    padding: 48px 17px 55px;
+  }
+
+  .profile-hero-name {
+    font-size: 30px;
+  }
+
+  .profile-hero-description {
+    font-size: 14px;
+  }
+
+  .profile-content {
+    width: calc(100% - 22px);
+  }
+
+  .profile-section,
+  .about-card,
+  .booking-panel {
+    margin-top: 20px;
+    padding: 22px 17px;
+    border-radius: 14px;
+  }
+
+  .section-title {
+    font-size: 21px;
+  }
+
+  .service-list,
+  .package-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-field-full {
+    grid-column: auto;
+  }
+
+  .intake-panel {
+    padding: 18px 14px;
+  }
+
+  .profile-button {
+    width: 100%;
+  }
+
+  .profile-button-secondary {
+    margin-top: 20px;
+  }
+
+  .booking-submit-button {
+    width: 100%;
+  }
+}
+
+/* =========================================
+   CALENDAR - LAVENDER THEME
+========================================= */
+
+.public-profile-page .profile-calendar {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 20px;
+}
+
+.public-profile-page .profile-calendar-label {
+  color: #49336f;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.public-profile-page .profile-calendar-input {
+  width: 100%;
+  min-height: 48px;
+  padding: 11px 14px;
+  border: 1px solid #e5dcef;
+  border-radius: 10px;
+  outline: none;
+  background: #ffffff;
+  color: #30204f;
+  color-scheme: light;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.public-profile-page .profile-calendar-input:focus {
+  border-color: #9a78d1;
+  box-shadow: 0 0 0 3px rgba(118, 80, 189, 0.1);
+}
+
+/* =========================================
+   SLOT PICKER - LAVENDER THEME
+========================================= */
+
+.public-profile-page .profile-slot-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.public-profile-page .profile-slot-button {
+  min-height: 43px;
+  padding: 11px 17px;
+  border: 1px solid #d8c7f5;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #7045b5;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.public-profile-page .profile-slot-button:hover {
+  border-color: #7650bd;
+  background: #f2ebff;
+  color: #60409d;
+}
+
+.public-profile-page .profile-slot-button.profile-slot-selected {
+  border-color: #7650bd;
+  background: #7650bd;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(118, 80, 189, 0.2);
+}
+
+.public-profile-page .profile-no-slots {
+  margin-top: 15px;
+  padding: 15px;
+  border: 1px solid #eee7f7;
+  border-radius: 10px;
+  background: #faf8fd;
+  color: #81768f;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+
+/* UNFAZED PUBLIC PROFILE CALENDAR */
+
+.profile-calendar {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  margin-bottom: 20px !important;
+}
+
+.profile-calendar-label {
+  color: #49336f !important;
+  font-size: 13px !important;
+  font-weight: 650 !important;
+}
+
+input.profile-calendar-input {
+  display: block !important;
+  width: 100% !important;
+  height: 48px !important;
+  padding: 10px 14px !important;
+  margin: 0 !important;
+
+  appearance: auto !important;
+  -webkit-appearance: auto !important;
+  color-scheme: light !important;
+
+  background-color: #ffffff !important;
+  color: #30204f !important;
+
+  border: 1px solid #e5dcef !important;
+  border-radius: 10px !important;
+
+  font-family: inherit !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+
+  box-shadow: none !important;
+  cursor: pointer !important;
+}
+
+input.profile-calendar-input:focus {
+  outline: none !important;
+  border-color: #9a78d1 !important;
+  box-shadow: 0 0 0 3px rgba(118, 80, 189, 0.1) !important;
+}
