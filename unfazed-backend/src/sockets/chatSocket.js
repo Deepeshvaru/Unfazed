@@ -13,7 +13,10 @@ const {
 const initializeChat = (httpServer) => {
   const io = new Server(httpServer, {
     cors: {
-      origin: "http://localhost:5173",
+     origin: [
+    "http://localhost:5173",
+    "https://unfazed-fnks.vercel.app"
+  ],
       methods: ["GET", "POST"]
     }
   });
