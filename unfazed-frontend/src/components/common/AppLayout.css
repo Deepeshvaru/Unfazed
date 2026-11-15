@@ -1,11 +1,13 @@
 
 /* =========================================
    UNFAZED - THERAPIST APP LAYOUT
-========================================= */
+   ========================================= */
 
 .app-layout {
   min-height: 100vh;
   display: flex;
+  position: relative;
+  overflow: visible;
   background: #f8f7fb;
   color: #302344;
   font-family: "Inter", "Segoe UI", sans-serif;
@@ -18,9 +20,14 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: visible;
+  isolation: isolate;
 }
 
-/* Header */
+/* =========================================
+   HEADER
+   ========================================= */
 
 .app-layout-header {
   min-height: 88px;
@@ -29,10 +36,17 @@
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+
   background: #ffffff;
   border-bottom: 1px solid #eeeaf3;
+
   position: relative;
   z-index: 20;
+  overflow: visible;
+}
+
+.app-layout-header-user {
+  min-width: 0;
 }
 
 .app-layout-header-user h2 {
@@ -48,33 +62,50 @@
   font-size: 12px;
 }
 
-/* Header actions */
+/* =========================================
+   HEADER ACTIONS
+   ========================================= */
 
 .therapist-header-actions {
+  position: relative;
+  z-index: 21;
+
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 18px;
+
+  flex-shrink: 0;
+  overflow: visible;
 }
 
 /* =========================================
    NOTIFICATION BELL
-========================================= */
+   ========================================= */
 
 .therapist-notification-wrapper {
   position: relative;
+  z-index: 22;
+  flex-shrink: 0;
+  overflow: visible;
 }
 
 .therapist-notification-button {
   width: 44px;
   height: 44px;
+
   position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   border: 1px solid #eee8f5;
   border-radius: 12px;
+
   background: #ffffff;
   color: #7650bd;
+
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -102,36 +133,55 @@
   position: absolute;
   top: -6px;
   right: -6px;
+
   min-width: 19px;
   height: 19px;
   padding: 0 5px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   border: 2px solid #ffffff;
   border-radius: 20px;
+
   background: #e45b70;
   color: #ffffff;
+
   font-size: 10px;
   font-weight: 700;
 }
 
 /* =========================================
    NOTIFICATION DROPDOWN
-========================================= */
+   ========================================= */
 
 .therapist-notification-dropdown {
   position: absolute;
   top: calc(100% + 13px);
   right: 0;
-  z-index: 1000;
+  left: auto;
+
+  z-index: 100;
+
   width: 360px;
   max-width: calc(100vw - 32px);
+  max-height: min(500px, calc(100vh - 110px));
+
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+
   overflow: hidden;
+
   border: 1px solid #eee8f5;
   border-radius: 16px;
+
   background: #ffffff;
+
   box-shadow: 0 15px 45px rgba(42, 27, 68, 0.14);
+
   animation: notificationDropdownIn 0.18s ease;
 }
 
@@ -150,11 +200,15 @@
 /* Dropdown heading */
 
 .therapist-notification-heading {
+  flex-shrink: 0;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+
   padding: 17px 18px;
+
   border-bottom: 1px solid #f0ebf5;
 }
 
@@ -172,12 +226,16 @@
 
 .therapist-notification-heading button {
   padding: 6px 8px;
+
   border: none;
   border-radius: 6px;
+
   background: transparent;
   color: #7650bd;
+
   font-size: 12px;
   font-weight: 600;
+
   cursor: pointer;
   transition: background 0.2s ease;
 }
@@ -186,11 +244,18 @@
   background: #f6f1fc;
 }
 
+.therapist-notification-heading button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 /* Notification list */
 
 .therapist-notification-list {
+  min-height: 0;
   max-height: 360px;
   overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .therapist-notification-list::-webkit-scrollbar {
@@ -207,6 +272,7 @@
 .therapist-notification-empty {
   padding: 30px 18px;
   margin: 0;
+
   color: #8c8299;
   font-size: 13px;
   text-align: center;
@@ -216,14 +282,19 @@
 
 .therapist-notification-item {
   width: 100%;
+
   display: flex;
   align-items: flex-start;
   gap: 12px;
+
   padding: 15px 17px;
+
   border: none;
   border-bottom: 1px solid #f3eff7;
+
   background: #ffffff;
   text-align: left;
+
   cursor: pointer;
   transition: background 0.2s ease;
 }
@@ -250,7 +321,9 @@
   width: 8px;
   height: 8px;
   min-width: 8px;
+
   margin-top: 6px;
+
   border-radius: 50%;
   background: transparent;
 }
@@ -264,6 +337,7 @@
 
 .therapist-notification-text {
   min-width: 0;
+
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -289,17 +363,21 @@
 
 /* =========================================
    LOGOUT BUTTON
-========================================= */
+   ========================================= */
 
 .app-layout-logout {
   min-height: 40px;
   padding: 0 16px;
+
   border: 1px solid #eadff0;
   border-radius: 10px;
+
   background: #ffffff;
   color: #7650bd;
+
   font-size: 12px;
   font-weight: 650;
+
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -311,18 +389,25 @@
 }
 
 /* =========================================
-   DASHBOARD CONTENT
-========================================= */
+   PAGE CONTENT
+   ========================================= */
 
 .app-layout-content {
   width: 100%;
+  min-width: 0;
   flex: 1;
+
+  position: relative;
+  z-index: 1;
+
   padding: 28px 32px;
+
+  isolation: isolate;
 }
 
 /* =========================================
-   RESPONSIVE DESIGN
-========================================= */
+   TABLET
+   ========================================= */
 
 @media (max-width: 900px) {
   .app-layout-header {
@@ -333,6 +418,10 @@
     padding: 24px 22px;
   }
 }
+
+/* =========================================
+   MOBILE
+   ========================================= */
 
 @media (max-width: 600px) {
   .app-layout-header {
@@ -364,13 +453,23 @@
     height: 19px;
   }
 
+  /* Mobile dropdown uses viewport width */
+
   .therapist-notification-dropdown {
     position: fixed;
-    top: 75px;
+
+    top: 83px;
     right: 12px;
     left: 12px;
+
     width: auto;
     max-width: none;
+
+    max-height: calc(100vh - 100px);
+  }
+
+  .therapist-notification-list {
+    max-height: min(360px, calc(100vh - 190px));
   }
 
   .app-layout-logout {
@@ -384,6 +483,10 @@
   }
 }
 
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
 @media (max-width: 380px) {
   .app-layout-header-user p {
     display: none;
@@ -396,110 +499,9 @@
   .therapist-header-actions {
     gap: 7px;
   }
-}
-
-
-/* =========================================
-   THERAPIST NOTIFICATION DROPDOWN FIX
-   ========================================= */
-
-/* Main application layout */
-.app-layout {
-  position: relative;
-  overflow: visible;
-}
-
-/* Keep the header above page content */
-.app-layout-header {
-  position: relative;
-  z-index: 1000;
-  overflow: visible;
-}
-
-/* Header action buttons */
-.therapist-header-actions {
-  position: relative;
-  z-index: 1001;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 22px;
-  flex-shrink: 0;
-  overflow: visible;
-}
-
-/* Notification icon wrapper */
-.therapist-notification-wrapper {
-  position: relative;
-  z-index: 1002;
-  flex-shrink: 0;
-  overflow: visible;
-}
-
-/* Notification dropdown */
-.therapist-notification-dropdown {
-  position: absolute;
-  top: calc(100% + 12px);
-  right: 0;
-  left: auto;
-
-  z-index: 10000;
-
-  width: 360px;
-  max-width: min(360px, calc(100vw - 24px));
-  max-height: min(500px, calc(100dvh - 110px));
-
-  overflow-x: hidden;
-  overflow-y: auto;
-
-  box-sizing: border-box;
-}
-
-/* Keep page content behind the header */
-.app-layout-content {
-  position: relative;
-  z-index: 0;
-}
-
-/* =========================================
-   TABLET AND MOBILE
-   ========================================= */
-
-@media (max-width: 768px) {
-  .app-layout-header {
-    z-index: 1000;
-  }
-
-  .therapist-header-actions {
-    gap: 12px;
-  }
 
   .therapist-notification-dropdown {
-    top: calc(100% + 10px);
-    right: 0;
-    left: auto;
-
-    width: min(340px, calc(100vw - 24px));
-    max-width: calc(100vw - 24px);
-
-    max-height: calc(100dvh - 100px);
-  }
-}
-
-/* =========================================
-   SMALL MOBILE
-   ========================================= */
-
-@media (max-width: 380px) {
-  .therapist-header-actions {
-    gap: 8px;
-  }
-
-  .therapist-notification-dropdown {
-    right: 0;
-    width: min(300px, calc(100vw - 20px));
-    max-width: calc(100vw - 20px);
-
-    max-height: calc(100dvh - 90px);
+    right: 10px;
+    left: 10px;
   }
 }
