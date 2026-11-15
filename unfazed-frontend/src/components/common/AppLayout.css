@@ -1,35 +1,41 @@
 
 /* =========================================
    UNFAZED - THERAPIST APP LAYOUT
-   ========================================= */
+========================================= */
 
-.app-layout {
+.therapist-layout {
   min-height: 100vh;
   display: flex;
   position: relative;
   overflow: visible;
+  isolation: isolate;
   background: #f8f7fb;
   color: #302344;
   font-family: "Inter", "Segoe UI", sans-serif;
 }
 
-/* Main dashboard area */
+/* SIDEBAR */
 
-.app-layout-main {
+.therapist-sidebar {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+/* MAIN CONTENT */
+
+.therapist-main {
   min-width: 0;
   flex: 1;
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: visible;
-  isolation: isolate;
 }
 
-/* =========================================
-   HEADER
-   ========================================= */
+/* HEADER */
 
-.app-layout-header {
+.therapist-topbar {
   min-height: 88px;
   padding: 18px 32px;
   display: flex;
@@ -41,34 +47,36 @@
   border-bottom: 1px solid #eeeaf3;
 
   position: relative;
-  z-index: 20;
+  z-index: 100;
   overflow: visible;
 }
 
-.app-layout-header-user {
+/* HEADER TITLE */
+
+.therapist-topbar > div:first-child {
   min-width: 0;
 }
 
-.app-layout-header-user h2 {
-  margin: 0;
+.therapist-topbar > div:first-child > span {
+  display: block;
+  color: #91889d;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.therapist-topbar h2 {
+  margin: 6px 0 0;
   color: #302344;
   font-size: 20px;
   font-weight: 700;
 }
 
-.app-layout-header-user p {
-  margin: 6px 0 0;
-  color: #91889d;
-  font-size: 12px;
-}
-
-/* =========================================
-   HEADER ACTIONS
-   ========================================= */
+/* HEADER ACTIONS */
 
 .therapist-header-actions {
   position: relative;
-  z-index: 21;
+  z-index: 102;
 
   display: flex;
   align-items: center;
@@ -79,21 +87,20 @@
   overflow: visible;
 }
 
-/* =========================================
-   NOTIFICATION BELL
-   ========================================= */
+/* NOTIFICATION WRAPPER */
 
 .therapist-notification-wrapper {
   position: relative;
-  z-index: 22;
+  z-index: 103;
   flex-shrink: 0;
   overflow: visible;
 }
 
+/* NOTIFICATION BUTTON */
+
 .therapist-notification-button {
   width: 44px;
   height: 44px;
-
   position: relative;
 
   display: flex;
@@ -127,7 +134,7 @@
   height: 21px;
 }
 
-/* Unread badge */
+/* UNREAD BADGE */
 
 .therapist-notification-badge {
   position: absolute;
@@ -152,9 +159,7 @@
   font-weight: 700;
 }
 
-/* =========================================
-   NOTIFICATION DROPDOWN
-   ========================================= */
+/* NOTIFICATION DROPDOWN */
 
 .therapist-notification-dropdown {
   position: absolute;
@@ -162,7 +167,7 @@
   right: 0;
   left: auto;
 
-  z-index: 100;
+  z-index: 9999;
 
   width: 360px;
   max-width: calc(100vw - 32px);
@@ -172,7 +177,6 @@
   flex-direction: column;
 
   box-sizing: border-box;
-
   overflow: hidden;
 
   border: 1px solid #eee8f5;
@@ -180,7 +184,7 @@
 
   background: #ffffff;
 
-  box-shadow: 0 15px 45px rgba(42, 27, 68, 0.14);
+  box-shadow: 0 15px 45px rgba(42, 27, 68, 0.18);
 
   animation: notificationDropdownIn 0.18s ease;
 }
@@ -197,7 +201,7 @@
   }
 }
 
-/* Dropdown heading */
+/* DROPDOWN HEADING */
 
 .therapist-notification-heading {
   flex-shrink: 0;
@@ -249,7 +253,7 @@
   cursor: not-allowed;
 }
 
-/* Notification list */
+/* NOTIFICATION LIST */
 
 .therapist-notification-list {
   min-height: 0;
@@ -267,7 +271,7 @@
   background: #d9cfe8;
 }
 
-/* Empty/loading message */
+/* EMPTY MESSAGE */
 
 .therapist-notification-empty {
   padding: 30px 18px;
@@ -278,7 +282,7 @@
   text-align: center;
 }
 
-/* Individual notification */
+/* NOTIFICATION ITEM */
 
 .therapist-notification-item {
   width: 100%;
@@ -315,13 +319,12 @@
   background: #f1eafa;
 }
 
-/* Unread indicator */
+/* UNREAD INDICATOR */
 
 .therapist-notification-dot {
   width: 8px;
   height: 8px;
   min-width: 8px;
-
   margin-top: 6px;
 
   border-radius: 50%;
@@ -333,7 +336,7 @@
   background: #7650bd;
 }
 
-/* Notification text */
+/* NOTIFICATION TEXT */
 
 .therapist-notification-text {
   min-width: 0;
@@ -361,9 +364,7 @@
   font-size: 10px;
 }
 
-/* =========================================
-   LOGOUT BUTTON
-   ========================================= */
+/* LOGOUT BUTTON */
 
 .app-layout-logout {
   min-height: 40px;
@@ -388,11 +389,9 @@
   color: #ffffff;
 }
 
-/* =========================================
-   PAGE CONTENT
-   ========================================= */
+/* PAGE CONTENT */
 
-.app-layout-content {
+.therapist-page-content {
   width: 100%;
   min-width: 0;
   flex: 1;
@@ -401,41 +400,31 @@
   z-index: 1;
 
   padding: 28px 32px;
-
-  isolation: isolate;
 }
 
-/* =========================================
-   TABLET
-   ========================================= */
+/* TABLET */
 
 @media (max-width: 900px) {
-  .app-layout-header {
+  .therapist-topbar {
     padding: 16px 22px;
   }
 
-  .app-layout-content {
+  .therapist-page-content {
     padding: 24px 22px;
   }
 }
 
-/* =========================================
-   MOBILE
-   ========================================= */
+/* MOBILE */
 
 @media (max-width: 600px) {
-  .app-layout-header {
+  .therapist-topbar {
     min-height: 75px;
     padding: 13px 15px;
     gap: 10px;
   }
 
-  .app-layout-header-user h2 {
+  .therapist-topbar h2 {
     font-size: 16px;
-  }
-
-  .app-layout-header-user p {
-    font-size: 10px;
   }
 
   .therapist-header-actions {
@@ -453,18 +442,14 @@
     height: 19px;
   }
 
-  /* Mobile dropdown uses viewport width */
-
   .therapist-notification-dropdown {
     position: fixed;
-
     top: 83px;
     right: 12px;
     left: 12px;
 
     width: auto;
     max-width: none;
-
     max-height: calc(100vh - 100px);
   }
 
@@ -478,24 +463,14 @@
     font-size: 11px;
   }
 
-  .app-layout-content {
+  .therapist-page-content {
     padding: 18px 14px;
   }
 }
 
-/* =========================================
-   SMALL MOBILE
-   ========================================= */
+/* SMALL MOBILE */
 
 @media (max-width: 380px) {
-  .app-layout-header-user p {
-    display: none;
-  }
-
-  .app-layout-header-user h2 {
-    font-size: 14px;
-  }
-
   .therapist-header-actions {
     gap: 7px;
   }
