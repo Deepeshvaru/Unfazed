@@ -398,60 +398,97 @@
   }
 }
 
+
 /* =========================================
-   THERAPIST NOTIFICATION FIX
+   THERAPIST NOTIFICATION DROPDOWN FIX
    ========================================= */
 
-.app-layout-header {
+/* Main application layout */
+.app-layout {
   position: relative;
-  z-index: 100;
   overflow: visible;
 }
 
+/* Keep the header above page content */
+.app-layout-header {
+  position: relative;
+  z-index: 1000;
+  overflow: visible;
+}
+
+/* Header action buttons */
 .therapist-header-actions {
   position: relative;
-  z-index: 110;
+  z-index: 1001;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 22px;
   flex-shrink: 0;
+  overflow: visible;
 }
 
+/* Notification icon wrapper */
 .therapist-notification-wrapper {
   position: relative;
-  z-index: 120;
+  z-index: 1002;
   flex-shrink: 0;
+  overflow: visible;
 }
 
+/* Notification dropdown */
 .therapist-notification-dropdown {
   position: absolute;
   top: calc(100% + 12px);
   right: 0;
   left: auto;
-  z-index: 9999;
+
+  z-index: 10000;
+
   width: 360px;
-  max-width: calc(100vw - 32px);
+  max-width: min(360px, calc(100vw - 24px));
+  max-height: min(500px, calc(100dvh - 110px));
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  box-sizing: border-box;
 }
 
+/* Keep page content behind the header */
 .app-layout-content {
   position: relative;
-  z-index: 1;
+  z-index: 0;
 }
 
-@media (max-width: 600px) {
+/* =========================================
+   TABLET AND MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+  .app-layout-header {
+    z-index: 1000;
+  }
+
   .therapist-header-actions {
     gap: 12px;
   }
 
   .therapist-notification-dropdown {
-    position: absolute;
     top: calc(100% + 10px);
     right: 0;
     left: auto;
-    width: 340px;
+
+    width: min(340px, calc(100vw - 24px));
     max-width: calc(100vw - 24px);
+
+    max-height: calc(100dvh - 100px);
   }
 }
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
 
 @media (max-width: 380px) {
   .therapist-header-actions {
@@ -459,8 +496,10 @@
   }
 
   .therapist-notification-dropdown {
-    right: -8px;
-    width: 300px;
+    right: 0;
+    width: min(300px, calc(100vw - 20px));
     max-width: calc(100vw - 20px);
+
+    max-height: calc(100dvh - 90px);
   }
 }
