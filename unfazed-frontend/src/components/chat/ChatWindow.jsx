@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { io } from "socket.io-client";
 import MessageBubble from "./MessageBubble";
 
-const SOCKET_URL = "http://localhost:5000";
+const SOCKET_URL = "https://unfazed-ykl6.onrender.com";
 
 function ChatWindow({
   clientId,

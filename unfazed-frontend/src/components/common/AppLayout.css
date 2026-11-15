@@ -397,3 +397,70 @@
     gap: 7px;
   }
 }
+
+/* =========================================
+   THERAPIST NOTIFICATION FIX
+   ========================================= */
+
+.app-layout-header {
+  position: relative;
+  z-index: 100;
+  overflow: visible;
+}
+
+.therapist-header-actions {
+  position: relative;
+  z-index: 110;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-shrink: 0;
+}
+
+.therapist-notification-wrapper {
+  position: relative;
+  z-index: 120;
+  flex-shrink: 0;
+}
+
+.therapist-notification-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  left: auto;
+  z-index: 9999;
+  width: 360px;
+  max-width: calc(100vw - 32px);
+}
+
+.app-layout-content {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 600px) {
+  .therapist-header-actions {
+    gap: 12px;
+  }
+
+  .therapist-notification-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    left: auto;
+    width: 340px;
+    max-width: calc(100vw - 24px);
+  }
+}
+
+@media (max-width: 380px) {
+  .therapist-header-actions {
+    gap: 8px;
+  }
+
+  .therapist-notification-dropdown {
+    right: -8px;
+    width: 300px;
+    max-width: calc(100vw - 20px);
+  }
+}
