@@ -8,7 +8,7 @@ The platform provides tools for managing clients, scheduling appointments, accep
 
 - **Frontend:** https://unfazed-fnks.vercel.app
 - **Backend API:** https://unfazed-ykl6.onrender.com
-- **GitHub Repository:** [Add your GitHub repository link here]
+- **GitHub Repository:** https://github.com/Deepeshvaru/Unfazed
 
 ##  Project Objective
 
